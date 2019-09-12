@@ -1,0 +1,41 @@
+/* page */
+
+.page-enter,
+.page-leave-active {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+.page-enter-active {
+    transition: opacity .6s ease-out .4s;
+}
+
+/* end page */
+
+/* fade */
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .2s;
+}
+
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
+}
+
+/* end fade */
+
+/* max-height */
+
+.max-height-enter-active,
+.max-height-leave-active {
+    transition: max-height .2s;
+}
+
+.max-height-enter,
+.max-height-leave-active {
+    max-height: 0;
+}
+
+/* end max-height */
