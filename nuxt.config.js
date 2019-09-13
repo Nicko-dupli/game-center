@@ -1,5 +1,7 @@
 import {componentFolder} from './assets/js/helper';
 
+require('dotenv').config();
+
 let ModalComponents = componentFolder('./components/default/modals/');
 
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
@@ -88,6 +90,7 @@ module.exports = {
      ** Nuxt.js modules
      */
     modules: [
+        '@nuxtjs/dotenv',
         '@nuxtjs/style-resources',
         '@nuxtjs/stylelint-module'
     ],
@@ -135,11 +138,11 @@ module.exports = {
                     loader: 'eslint-loader',
                     exclude: /(node_modules)/
                 });
-
-                config.node = {
-                    fs: 'empty'
-                };
             }
+
+            config.node = {
+                fs: 'empty'
+            };
         }
     }
 };
