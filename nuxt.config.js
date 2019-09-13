@@ -2,6 +2,10 @@ import {componentFolder} from './assets/js/helper';
 
 let ModalComponents = componentFolder('./components/default/modals/');
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+    base: '/nicko-dupli.github.io/'
+} : {};
+
 module.exports = {
     mode: 'universal',
 
@@ -77,6 +81,7 @@ module.exports = {
     router: {
         linkActiveClass: '_active-link',
         linkExactActiveClass: '_active-exact',
+        ...routerBase,
     },
 
     /*
