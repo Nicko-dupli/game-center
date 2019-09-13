@@ -1,0 +1,17 @@
+.button {
+    padding: 9px 35px 10px;
+    min-width: 210px;
+    font-size: 18px;
+    line-height: normal;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: .2px;
+    background-color: #5ea953;
+    transition: background-color .2s ease;
+    text-align: center;
+    color: #fff;
+
+    &:hover {
+        background-color: #5a9f4f;
+    }
+}
