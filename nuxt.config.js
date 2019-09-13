@@ -1,4 +1,6 @@
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+import {componentFolder} from './assets/js/helper';
+
+let ModalComponents = componentFolder('./components/default/modals/');
 
 module.exports = {
     mode: 'universal',
@@ -7,6 +9,10 @@ module.exports = {
         http2: {
             push: true,
         }
+    },
+
+    env: {
+        ModalComponents
     },
 
     watchers: {
@@ -62,6 +68,9 @@ module.exports = {
     plugins: [
         {
             src: '~plugins/vueLazyload.js',
+        },
+        {
+            src: '~plugins/modal.js',
         },
     ],
 
@@ -121,6 +130,10 @@ module.exports = {
                     loader: 'eslint-loader',
                     exclude: /(node_modules)/
                 });
+
+                config.node = {
+                    fs: 'empty'
+                };
             }
         }
     }
